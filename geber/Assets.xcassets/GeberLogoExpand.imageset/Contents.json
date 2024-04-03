@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "geber-logo-expand.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
