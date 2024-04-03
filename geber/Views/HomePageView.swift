@@ -16,7 +16,7 @@ struct HomePage: View {
     @State public var isSent:Bool = false
     
     @State var timer:Timer?
-    @State var timeRemaining:TimeInterval = 10
+    @State var timeRemaining:TimeInterval = 5
     
     var body: some View {
         Color
@@ -250,6 +250,8 @@ struct Slide: View{
                             redisPubSub.getHelp(minor: location)
                             setTimer()
                         }
+                        
+                        
                     }
             )
     }
@@ -273,6 +275,7 @@ struct Slide: View{
             isSent = false
             timer?.invalidate()
             timeRemaining = 10
+            location = -1
         }
     }
     
