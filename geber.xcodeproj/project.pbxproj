@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99F55A712BBDBFD7000B218E /* RedisPubSub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F55A702BBDBFD7000B218E /* RedisPubSub.swift */; };
+		99F55A742BBDC01C000B218E /* SwiftRedis in Frameworks */ = {isa = PBXBuildFile; productRef = 99F55A732BBDC01C000B218E /* SwiftRedis */; };
+		99F55A782BBDC08E000B218E /* SwiftyRedis in Frameworks */ = {isa = PBXBuildFile; productRef = 99F55A772BBDC08E000B218E /* SwiftyRedis */; };
+		99F55A7A2BBDC0D7000B218E /* EnvManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F55A792BBDC0D7000B218E /* EnvManager.swift */; };
+		99F55A7C2BBDC0FF000B218E /* IBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F55A7B2BBDC0FF000B218E /* IBeaconManager.swift */; };
+		99F55A7E2BBDC112000B218E /* PushNotificationActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F55A7D2BBDC112000B218E /* PushNotificationActor.swift */; };
+		99F55A842BBDC250000B218E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F55A832BBDC250000B218E /* Event.swift */; };
 		B21853A52BBDB6C1002B61F9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21853A42BBDB6C1002B61F9 /* Launch Screen.storyboard */; };
 		B29B0B2A2BBB9458001D05C7 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0B292BBB9458001D05C7 /* Tip.swift */; };
 		B29DD10A2BB52742005F25AD /* geberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DD1092BB52742005F25AD /* geberApp.swift */; };
@@ -17,7 +24,7 @@
 		B29DD11D2BB52743005F25AD /* geberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DD11C2BB52743005F25AD /* geberTests.swift */; };
 		B29DD1272BB52743005F25AD /* geberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DD1262BB52743005F25AD /* geberUITests.swift */; };
 		B29DD1292BB52743005F25AD /* geberUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DD1282BB52743005F25AD /* geberUITestsLaunchTests.swift */; };
-		B29DD1382BB52FD2005F25AD /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DD1372BB52FD2005F25AD /* HomePage.swift */; };
+		B29DD1382BB52FD2005F25AD /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DD1372BB52FD2005F25AD /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99F55A702BBDBFD7000B218E /* RedisPubSub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedisPubSub.swift; sourceTree = "<group>"; };
+		99F55A792BBDC0D7000B218E /* EnvManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvManager.swift; sourceTree = "<group>"; };
+		99F55A7B2BBDC0FF000B218E /* IBeaconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconManager.swift; sourceTree = "<group>"; };
+		99F55A7D2BBDC112000B218E /* PushNotificationActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationActor.swift; sourceTree = "<group>"; };
+		99F55A812BBDC1FC000B218E /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
+		99F55A832BBDC250000B218E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		99F55A852BBDC444000B218E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B21853A42BBDB6C1002B61F9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B29B0B292BBB9458001D05C7 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		B29DD1062BB52742005F25AD /* geber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,7 +65,7 @@
 		B29DD1222BB52743005F25AD /* geberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = geberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29DD1262BB52743005F25AD /* geberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geberUITests.swift; sourceTree = "<group>"; };
 		B29DD1282BB52743005F25AD /* geberUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = geberUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B29DD1372BB52FD2005F25AD /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		B29DD1372BB52FD2005F25AD /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F55A782BBDC08E000B218E /* SwiftyRedis in Frameworks */,
+				99F55A742BBDC01C000B218E /* SwiftRedis in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,13 +95,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99F55A6E2BBDBF85000B218E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				99F55A702BBDBFD7000B218E /* RedisPubSub.swift */,
+				99F55A792BBDC0D7000B218E /* EnvManager.swift */,
+				99F55A7B2BBDC0FF000B218E /* IBeaconManager.swift */,
+				99F55A7D2BBDC112000B218E /* PushNotificationActor.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		99F55A6F2BBDBFB8000B218E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B29DD1372BB52FD2005F25AD /* HomePageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		99F55A752BBDC031000B218E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99F55A822BBDC238000B218E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99F55A832BBDC250000B218E /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B29DD0FD2BB52742005F25AD = {
 			isa = PBXGroup;
 			children = (
+				99F55A812BBDC1FC000B218E /* env.xcconfig */,
 				B29DD1082BB52742005F25AD /* geber */,
 				B29DD11B2BB52743005F25AD /* geberTests */,
 				B29DD1252BB52743005F25AD /* geberUITests */,
 				B29DD1072BB52742005F25AD /* Products */,
+				99F55A752BBDC031000B218E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,14 +154,17 @@
 		B29DD1082BB52742005F25AD /* geber */ = {
 			isa = PBXGroup;
 			children = (
+				99F55A852BBDC444000B218E /* Info.plist */,
 				B29DD1092BB52742005F25AD /* geberApp.swift */,
 				B29DD10B2BB52742005F25AD /* ContentView.swift */,
 				B29DD10D2BB52742005F25AD /* Item.swift */,
 				B29DD10F2BB52743005F25AD /* Assets.xcassets */,
-				B29DD1112BB52743005F25AD /* Preview Content */,
-				B29DD1372BB52FD2005F25AD /* HomePage.swift */,
+				99F55A6F2BBDBFB8000B218E /* Views */,
+				99F55A822BBDC238000B218E /* Models */,
+				99F55A6E2BBDBF85000B218E /* Tools */,
 				B29B0B292BBB9458001D05C7 /* Tip.swift */,
 				B21853A42BBDB6C1002B61F9 /* Launch Screen.storyboard */,
+				B29DD1112BB52743005F25AD /* Preview Content */,
 			);
 			path = geber;
 			sourceTree = "<group>";
@@ -155,6 +210,10 @@
 			dependencies = (
 			);
 			name = geber;
+			packageProductDependencies = (
+				99F55A732BBDC01C000B218E /* SwiftRedis */,
+				99F55A772BBDC08E000B218E /* SwiftyRedis */,
+			);
 			productName = geber;
 			productReference = B29DD1062BB52742005F25AD /* geber.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +286,10 @@
 				Base,
 			);
 			mainGroup = B29DD0FD2BB52742005F25AD;
+			packageReferences = (
+				99F55A722BBDC01C000B218E /* XCRemoteSwiftPackageReference "Kitura-redis" */,
+				99F55A762BBDC08E000B218E /* XCRemoteSwiftPackageReference "swifty-redis" */,
+			);
 			productRefGroup = B29DD1072BB52742005F25AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,10 +334,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29DD10C2BB52742005F25AD /* ContentView.swift in Sources */,
+				99F55A842BBDC250000B218E /* Event.swift in Sources */,
 				B29DD10E2BB52742005F25AD /* Item.swift in Sources */,
+				99F55A712BBDBFD7000B218E /* RedisPubSub.swift in Sources */,
+				99F55A7C2BBDC0FF000B218E /* IBeaconManager.swift in Sources */,
+				99F55A7A2BBDC0D7000B218E /* EnvManager.swift in Sources */,
 				B29B0B2A2BBB9458001D05C7 /* Tip.swift in Sources */,
 				B29DD10A2BB52742005F25AD /* geberApp.swift in Sources */,
-				B29DD1382BB52FD2005F25AD /* HomePage.swift in Sources */,
+				99F55A7E2BBDC112000B218E /* PushNotificationActor.swift in Sources */,
+				B29DD1382BB52FD2005F25AD /* HomePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +381,7 @@
 /* Begin XCBuildConfiguration section */
 		B29DD12A2BB52743005F25AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99F55A812BBDC1FC000B218E /* env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -376,6 +445,7 @@
 		};
 		B29DD12B2BB52743005F25AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99F55A812BBDC1FC000B218E /* env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -438,15 +508,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"geber/Preview Content\"";
-				DEVELOPMENT_TEAM = CK8M57PVR8;
+				DEVELOPMENT_TEAM = 5V847CY3JM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = geber/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,15 +541,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"geber/Preview Content\"";
-				DEVELOPMENT_TEAM = CK8M57PVR8;
+				DEVELOPMENT_TEAM = 5V847CY3JM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = geber/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +678,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99F55A722BBDC01C000B218E /* XCRemoteSwiftPackageReference "Kitura-redis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Kitura-redis.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.200;
+			};
+		};
+		99F55A762BBDC08E000B218E /* XCRemoteSwiftPackageReference "swifty-redis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/michaelvanstraten/swifty-redis.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99F55A732BBDC01C000B218E /* SwiftRedis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F55A722BBDC01C000B218E /* XCRemoteSwiftPackageReference "Kitura-redis" */;
+			productName = SwiftRedis;
+		};
+		99F55A772BBDC08E000B218E /* SwiftyRedis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99F55A762BBDC08E000B218E /* XCRemoteSwiftPackageReference "swifty-redis" */;
+			productName = SwiftyRedis;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B29DD0FE2BB52742005F25AD /* Project object */;
 }

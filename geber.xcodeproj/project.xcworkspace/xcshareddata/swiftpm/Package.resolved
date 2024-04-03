@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "bluesocket",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kitura/BlueSocket.git",
+      "state" : {
+        "revision" : "c9894fd117457f1d006575fbfb2fdfd6f79eac03",
+        "version" : "1.0.200"
+      }
+    },
+    {
+      "identity" : "kitura-redis",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Kitura/Kitura-redis.git",
+      "state" : {
+        "revision" : "bdb603ac7aa662f522a4e4671908497e2dd152c0",
+        "version" : "2.1.200"
+      }
+    },
+    {
+      "identity" : "semaphore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/groue/Semaphore",
+      "state" : {
+        "revision" : "f1c4a0acabeb591068dea6cffdd39660b86dec28",
+        "version" : "0.0.8"
+      }
+    },
+    {
+      "identity" : "swifty-redis",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/michaelvanstraten/swifty-redis.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "58e813428500408b79f18ff26504a491480e32db"
+      }
+    }
+  ],
+  "version" : 2
+}

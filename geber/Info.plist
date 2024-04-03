@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LSEnvironment</key>
+	<dict>
+		<key>BEACON_UUID</key>
+		<string>$(BEACON_UUID)</string>
+		<key>SERVER_KEY</key>
+		<string>$(SERVER_KEY)</string>
+		<key>RECEIVER_FCM</key>
+		<string>$(RECEIVER_FCM)</string>
+		<key>REDIS_HOST</key>
+		<string>$(REDIS_HOST)</string>
+		<key>REDIS_PASS</key>
+		<string>$(REDIS_PASS)</string>
+		<key>REDIS_USER</key>
+		<string>$(REDIS_USER)</string>
+	</dict>
+</dict>
+</plist>

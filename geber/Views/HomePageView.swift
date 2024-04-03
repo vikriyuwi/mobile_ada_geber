@@ -10,7 +10,9 @@ import TipKit
 import SwiftData
 
 struct HomePage: View {
-    @State var locationDetected = 1
+    @StateObject var beaconManager = IBeaconManager()
+    
+    @State var locationDetected = 0
     @State public var isSent:Bool = false
     
     @State var timer:Timer?
@@ -18,14 +20,14 @@ struct HomePage: View {
     
     var body: some View {
         Color
-        .background
-        .ignoresSafeArea()
-        .overlay(
-            ZStack {
-                BackgroundImage(location: $locationDetected)
-                ActionArea(location: $locationDetected, isSent: $isSent, timer: $timer, timeRemaining: $timeRemaining)
-            }.frame(maxHeight: .infinity)
-        );
+            .background
+            .ignoresSafeArea()
+            .overlay(
+                ZStack {
+                    BackgroundImage(location: $beaconManager.minor )
+                    ActionArea(location: $beaconManager.minor, isSent: $isSent, timer: $timer, timeRemaining: $timeRemaining)
+                }.frame(maxHeight: .infinity)
+            );
     }
 }
 
@@ -34,14 +36,14 @@ struct BackgroundImage: View {
     var body: some View {
         VStack{
             switch location {
-                case 1:
-                    Image("MapLocation1").resizable().scaledToFit()
-                case 2:
-                    Image("MapLocation2").resizable().scaledToFit()
-                case 3:
-                    Image("MapLocation3").resizable().scaledToFit()
-                default:
-                    Image("MapNone").resizable().scaledToFit()
+            case 0:
+                Image("MapLocation1").resizable().scaledToFit()
+            case 1:
+                Image("MapLocation2").resizable().scaledToFit()
+            case 2:
+                Image("MapLocation3").resizable().scaledToFit()
+            default:
+                Image("MapNone").resizable().scaledToFit()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -80,12 +82,12 @@ struct ActionArea: View {
                             .frame(maxWidth: .infinity, alignment: .center)
                         } else {
                             Location(location: $location)
-                            if ((location > 0) && (location < 4)) {
+                            if ([0,1,2].contains(location)) {
                                 HelpDescription(desc: "Slide the button below to send request for help")
                                 GeometryReader { geometry in
                                     ZStack(alignment: .leading) {
                                         SlideBackground()
-                                        Slide(isSent: $isSent, timer: $timer, timeRemaining: $timeRemaining, maxWidth: (geometry.size.width))
+                                        Slide(isSent: $isSent, location: $location, timer: $timer, timeRemaining: $timeRemaining, maxWidth: (geometry.size.width))
                                     }
                                 }
                                 .frame(height: 62)
@@ -114,7 +116,7 @@ struct Location: View{
     
     var body: some View{
         HStack{
-            (location > 0) && (location < 4) ? Image(systemName: "mappin.circle.fill")
+            [0,1,2].contains(location) ? Image(systemName: "mappin.circle.fill")
                 .foregroundColor(.success).font(.largeTitle) : Image(systemName: "mappin.circle.fill")
                 .foregroundColor(.disabled).font(.largeTitle)
             VStack{
@@ -122,7 +124,7 @@ struct Location: View{
                     Text(loc)
                         .font(.system(size: 26, weight: .bold))
                         .multilineTextAlignment(.leading)
-                        .onAppear {
+                        .onChange(of: location) { () in
                             updateLocation()
                         }
                 }
@@ -135,14 +137,14 @@ struct Location: View{
     
     func updateLocation() {
         switch location {
-            case 1:
-                loc = "A01-A03"
-            case 2:
-                loc = "A04-A06"
-            case 3:
-                loc = "A07-A09"
-            default:
-                loc = "Unknown"
+        case 0:
+            loc = "A01-A03"
+        case 1:
+            loc = "A04-A06"
+        case 2:
+            loc = "A07-A09"
+        default:
+            loc = "Unknown"
         }
     }
 }
@@ -207,7 +209,10 @@ struct HelpDescription: View {
 }
 
 struct Slide: View{
+    @StateObject var redisPubSub = RedisPubSub()
+    
     @Binding var isSent: Bool
+    @Binding var location: Int
     
     @Binding var timer:Timer?
     @Binding var timeRemaining:TimeInterval
@@ -236,12 +241,13 @@ struct Slide: View{
                         }
                     }
                     .onEnded { value in
-//                        guard isSent == true else { return }
+                        //                        guard isSent == true else { return }
                         if width < maxWidth {
                             width = minWidth
                             UINotificationFeedbackGenerator().notificationOccurred(.warning)
                         } else {
                             UINotificationFeedbackGenerator().notificationOccurred(.success)
+                            redisPubSub.getHelp(minor: location)
                             setTimer()
                         }
                     }
@@ -255,6 +261,7 @@ struct Slide: View{
                 if timeRemaining > 0 {
                     timeRemaining -= 1
                 } else {
+                    redisPubSub.expireHelp(key: redisPubSub.current_key_event)
                     stopTimer()
                 }
             }
@@ -271,25 +278,25 @@ struct Slide: View{
     
     private func image(name: String, isShown: Bool) -> some View {
         Image(systemName: name)
-          .font(.system(size: 20, weight: .regular, design: .rounded))
-          .foregroundColor(.body)
-          .frame(width: 42, height: 42)
-          .background(RoundedRectangle(cornerRadius: 21).fill(.success))
-          .padding(4)
-          .opacity(isShown ? 1 : 0)
-          .scaleEffect(isShown ? 1 : 0.01)
-      }
+            .font(.system(size: 20, weight: .regular, design: .rounded))
+            .foregroundColor(.body)
+            .frame(width: 42, height: 42)
+            .background(RoundedRectangle(cornerRadius: 21).fill(.success))
+            .padding(4)
+            .opacity(isShown ? 1 : 0)
+            .scaleEffect(isShown ? 1 : 0.01)
+    }
 }
 
 struct BaseButtonStyle: ButtonStyle {
-
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.95 : 1)
             .opacity(configuration.isPressed ? 0.9 : 1)
             .animation(.default, value: configuration.isPressed)
     }
-
+    
 }
 
 struct SlideBackground: View {
@@ -297,7 +304,7 @@ struct SlideBackground: View {
         ZStack(alignment: .leading)  {
             RoundedRectangle(cornerRadius: 31)
                 .fill(.body)
-
+            
             Text("SLIDE TO REQUEST")
                 .font(.footnote)
                 .bold()
@@ -306,7 +313,7 @@ struct SlideBackground: View {
                 .padding(.leading,62)
         }
     }
-
+    
 }
 
 struct GeberTip: View{
@@ -321,7 +328,7 @@ struct GeberTip: View{
                     }
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                     Button(action: {
-
+                        
                     }, label: {
                         Image(systemName: "xmark.circle")
                     })
